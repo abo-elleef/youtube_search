@@ -11,8 +11,8 @@ const API_KEY = 'AIzaSyB3iNJP1pK1_joAagBfoNDk3Qz1TBJHhNg\t';
 class App extends Component {
     constructor(props){
         super(props);
-        this.state = {videos: [], selectedVideo: null};
-        this.doSearch('البردة')
+        this.state = {videos: [], selectedVideo: null, term: 'football'};
+        this.doSearch(this.state.term)
     }
     doSearch (text) {
         YTSearch({key: API_KEY, term: text}, (videos) => {

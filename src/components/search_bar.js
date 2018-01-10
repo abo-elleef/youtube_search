@@ -1,20 +1,24 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class SearchBar extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.setState({term: ''})
     }
-    onSearchChanges(term){
+
+    onSearchChanges(term) {
         this.setState({term: term});
         this.props.onSearchTermChange(term);
     }
-    render(){
+
+    render() {
         return (
-            <div className='row'>
-                <div className='col-md-12'>
-                    <input onChange={(e)=> this.onSearchChanges(e.target.value)} />
-                </div>
+            <div className="form-group">
+                <label for="exampleInputEmail1">You Tube Search</label>
+                <input onChange={(e) => this.onSearchChanges(e.target.value)}
+                       aria-describedby="emailHelp" placeholder="Type To Search" className="form-control"/>
+                <small id="emailHelp" className="form-text text-muted">
+                    videos will be shown as soon as you finish typing.
+                </small>
             </div>
         );
 
